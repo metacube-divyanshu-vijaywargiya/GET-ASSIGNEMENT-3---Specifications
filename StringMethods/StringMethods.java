@@ -15,7 +15,7 @@ public class StringMethods {
 			return false;
 		}
 		
-		for ( int i =0; i<string1Length; i++ ) {
+		for ( int i =0; i < string1Length; i++ ) {
 			if ( string1.charAt(i) != string2.charAt(i) ) {
 				return false;
 			}
@@ -34,7 +34,7 @@ public class StringMethods {
 		char[] reversedString = new char[string1Length];
 		
 		//reversing character by character
-		for ( int i=0; i<=string1Length/2; i++ ) {
+		for ( int i=0; i <= string1Length/2; i++ ) {
 			char temporaryStoringCharacter = string1.charAt(string1Length-1-i);
 			reversedString[string1Length-1-i] = string1.charAt(i);
 			reversedString[i] = temporaryStoringCharacter;
@@ -52,7 +52,7 @@ public class StringMethods {
 		int stringLength = string.length();
 		char[] swappedString = new char[stringLength];
 		
-		for ( int i=0; i<stringLength; i++ ) {
+		for ( int i=0; i < stringLength; i++ ) {
 			char ch = string.charAt(i);
 			
 			if ( ch>= 'a' & ch <= 'z' ) {
@@ -78,14 +78,16 @@ public class StringMethods {
 		int wordStart = 0;
 		int stringLength = string.length();
 		
-		for ( int i=0; i<=stringLength; i++ ) {
+		for ( int i=0; i <= stringLength; i++ ) {
 			//to find end of a word or string
 			if ( i == stringLength || string.charAt(i) == ' ' ) {
 				int currentWordLength = i - wordStart ;
+				
 				if ( maxLengthOfWord <= currentWordLength ) {
 					maxLengthOfWord = currentWordLength;
 					maxWordString = string.substring(wordStart, i);
 				}
+				
 				wordStart = i+1;
 			}
 		}

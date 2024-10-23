@@ -9,17 +9,19 @@ public class MarkSheetCalculator {
 	 * @throws ArithmeticException if no grades array is empty or null
 	 */
 	public double calculateAverageGrade(double [] grades) throws ArithmeticException {
-		if (grades == null || grades.length == 0) {
+		int gradesLength = grades.length;
+		
+		if ( grades == null || gradesLength == 0 ) {
 			throw new ArithmeticException("No Grades Available for calculating Average.");
 		}
 		
 		double gradeSum = 0;
 		
-		for (double grade : grades) {
+		for ( double grade : grades ) {
 			gradeSum += grade;
 		}
 		
-		double AverageGrade = gradeSum/grades.length;
+		double AverageGrade = gradeSum/gradesLength;
 		return AverageGrade;
 	}
 	
@@ -30,14 +32,16 @@ public class MarkSheetCalculator {
 	 * @throws ArithmeticException if no grades array is empty or null
 	 */
 	public double calculateMaximumGrade(double[] grades) throws ArithmeticException {
-		if (grades.length == 0 || grades == null) {
+		int gradesLength = grades.length;
+		
+		if ( gradesLength == 0 || grades == null ) {
 			throw new ArithmeticException("No Grades Available for Calculating Maximum Marks.");
 		}
 		
 		double maximumGrade = grades[0];
 		
-		for (double grade : grades) {
-			if(grade  >maximumGrade) {
+		for ( double grade : grades ) {
+			if( grade > maximumGrade ) {
 				maximumGrade = grade;
 			}
 		}
@@ -52,14 +56,14 @@ public class MarkSheetCalculator {
 	 * @throws ArithmeticException if no grades array is empty or null
 	 */
 	public double calculateMinimumGrade(double[] grades) throws ArithmeticException {
-		if (grades.length == 0 || grades == null) {			
+		if ( grades.length == 0 || grades == null ) {			
 			throw new ArithmeticException("No Grades Available for Calculating Minimum Marks.");
 		}
 		
 		double minimumGrade = grades[0];
 		
-		for (double grade : grades) {
-			if (grade < minimumGrade) {
+		for ( double grade : grades ) {
+			if ( grade < minimumGrade ) {
 				minimumGrade = grade;
 			}
 		}
@@ -74,19 +78,21 @@ public class MarkSheetCalculator {
 	 * @throws ArithmeticException if no grades array is empty or null
 	 */
 	public double calculatePercentageStudentPassed(double[] grades) throws ArithmeticException {
-		if (grades.length == 0 || grades == null) {			
+		int gradesLength = grades.length;
+
+		if ( gradesLength == 0 || grades == null ) {			
 			throw new ArithmeticException("No Grades Available for Calculating Percentage of students passed.");
 		}
 		
 		double passedStudentCount = 0;
 		
-		for (double grade : grades) {
-			if (grade >= 40) {
+		for ( double grade : grades ) {
+			if ( grade >= 40 ) {
 				passedStudentCount++;
 			}
 		}
 		
-		double totalStudents = grades.length;
-		return (passedStudentCount/totalStudents)*100;
+		double totalStudents = gradesLength;
+		return ( passedStudentCount/totalStudents )*100;
 	}
 }

@@ -7,11 +7,8 @@ public class Main {
 		ShapeAreaCalculator areaCalculator = new ShapeAreaCalculator();
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("1. Circle");
-		System.out.println("2. Rectangle");
-		System.out.println("3. Square");
-		System.out.println("4. Triangle");
-		System.out.println("Choose a Shape to calculate Area : ");
+		System.out.println(" 1. Circle \n 2. Rectangle \n 3. Square \n 4. Triangle");
+		System.out.println(" Choose a Shape to calculate Area : ");
 		
 		int choice = scanner.nextInt();
 		

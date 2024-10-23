@@ -18,12 +18,12 @@ public class Main {
 			}
 			
 			double[] grades =new double[numberOfStudents];
-			System.out.println("Enter grades for " + numberOfStudents + " Students : ");
+			System.out.println("Number of Students : " + numberOfStudents );
 			
-			for (int i=0;i<numberOfStudents;i++) {
+			for ( int i=0; i<numberOfStudents; i++ ) {
 				System.out.println("Enter grade for " + (i+1) + " Student : ");
 				grades[i]= scanner.nextDouble();
-				if (grades[i] < 0 || grades[i] > 100) {
+				if ( grades[i] < 0 || grades[i] > 100 ) {
 					throw new ArithmeticException("Grade must lie in 0-100.");
 				}
 			}
@@ -36,8 +36,10 @@ public class Main {
 			
 		} catch (InputMismatchException e) {
 			System.out.println("Invalid Input. Please Enter Only Integer for Number of Students and Grades.");
+			
 		}catch(ArithmeticException e) {
 			System.out.println(e.getMessage());
+			
 		}finally {
 			scanner.close();
 		}
