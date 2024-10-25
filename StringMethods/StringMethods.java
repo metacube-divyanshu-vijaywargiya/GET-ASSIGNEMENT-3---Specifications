@@ -85,9 +85,12 @@ public class StringMethods {
 				
 				if ( maxLengthOfWord <= currentWordLength ) {
 					maxLengthOfWord = currentWordLength;
-					maxWordString = string.substring(wordStart, i);
+					maxWordString = "";
+					// add each character one by one in maxWordString
+			                for (int j = wordStart; j < i; j++) {
+			                    maxWordString += string.charAt(j); 
+			                }
 				}
-				
 				wordStart = i+1;
 			}
 		}
