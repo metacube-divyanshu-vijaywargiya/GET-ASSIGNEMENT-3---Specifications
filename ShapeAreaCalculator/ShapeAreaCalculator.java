@@ -1,7 +1,7 @@
 package com.metacube;
 
 public class ShapeAreaCalculator {
-
+	public static final double PI = 3.14;
 	/**
 	 * To calculate triangle area
 	 * @param width given as an argument to calculate triangle's area
@@ -10,7 +10,7 @@ public class ShapeAreaCalculator {
 	 * @throws ArithmeticException if height or width less than or equals to 0
 	 */
 	public double calculateTriangleArea(double width , double height) throws ArithmeticException {
-		if( width <= 0 || height <=0 ) {
+		if( width == 0 || height ==0 ) {
 			throw new ArithmeticException();
 		}
 		
@@ -25,7 +25,7 @@ public class ShapeAreaCalculator {
 	 * @throws ArithmeticException if height or width less than or equals to 0
 	 */
 	public double calculateRectangleArea(double width, double height) throws ArithmeticException {
-		if ( width <=0 || height <=0 ) {
+		if ( width ==0 || height ==0 ) {
 			throw new ArithmeticException();
 		}
 		
@@ -39,7 +39,7 @@ public class ShapeAreaCalculator {
 	 * @throws ArithmeticException if side less than or equals to 0
 	 */
 	public double calculateSquareArea(double sideOfSquare) throws ArithmeticException {
-		if( sideOfSquare <= 0 ) {
+		if( sideOfSquare == 0 ) {
 			throw new ArithmeticException();
 		}
 		return sideOfSquare*sideOfSquare;
@@ -52,11 +52,11 @@ public class ShapeAreaCalculator {
 	 * @throws ArithmeticException if radius less than or equals to 0
 	 */
 	public double calculateCircleArea(double radius) throws ArithmeticException {
-		if( radius <= 0 ) {
+		if( radius == 0 ) {
 			throw new ArithmeticException();
 		}
 		
-		return 3.14*radius*radius;
+		return PI*radius*radius;
 	}
 	
 	
