@@ -15,13 +15,13 @@ public class MarkSheetCalculator {
 			throw new ArithmeticException("No Grades Available for calculating Average.");
 		}
 		
-		double gradeSum = 0;
+		double sumOfGrades = 0;
 		
 		for ( double grade : grades ) {
-			gradeSum += grade;
+			sumOfGrades += grade;
 		}
 		
-		double AverageGrade = gradeSum/gradesLength;
+		double AverageGrade = sumOfGrades/gradesLength;
 		return AverageGrade;
 	}
 	
